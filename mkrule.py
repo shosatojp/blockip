@@ -18,11 +18,11 @@ with open(args.file, 'rt') as f:
                 addr = cols[3]
                 mask = 32 - int(math.log2(int(cols[4])))
                 iprange = f'{addr}/{mask}'
-                print(f'nft add rule inet filter BLOCK ip saddr {iprange} log prefix "BLOCK {country}: " drop')
+                print(f'add rule inet filter BLOCK ip saddr {iprange} log prefix "BLOCK {country}: " drop')
 
             elif protocol == 'ipv6':
                 addr = cols[3]
                 mask = int(cols[4])
                 iprange = f'{addr}/{mask}'
 
-                print(f'nft add rule inet filter BLOCK ip6 saddr {iprange} log prefix "BLOCK {country}: " drop')
+                print(f'add rule inet filter BLOCK ip6 saddr {iprange} log prefix "BLOCK {country}: " drop')
