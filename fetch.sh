@@ -1,0 +1,1 @@
+cat list.txt | xargs -l -P1 -I% wget '%' -O- > all.list
